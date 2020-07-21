@@ -4,17 +4,17 @@
         <name>XLocalizer.Translate</name>
     </assembly>
     <members>
-        <member name="T:XLocalizer.Translate.IStringTranslator">
+        <member name="T:XLocalizer.Translate.ITranslator">
             <summary>
             Interface to implement a translation service
             </summary>
         </member>
-        <member name="P:XLocalizer.Translate.IStringTranslator.ServiceName">
+        <member name="P:XLocalizer.Translate.ITranslator.ServiceName">
             <summary>
             Service name is reuired for the dropdown list
             </summary>
         </member>
-        <member name="M:XLocalizer.Translate.IStringTranslator.TranslateAsync(System.String,System.String,System.String,System.String)">
+        <member name="M:XLocalizer.Translate.ITranslator.TranslateAsync(System.String,System.String,System.String,System.String)">
             <summary>
             Translate method shoudl return an <see cref="T:XLocalizer.Translate.TranslationResult"/>
             </summary>
@@ -24,7 +24,7 @@
             <param name="format"></param>
             <returns><see cref="T:XLocalizer.Translate.TranslationResult"/></returns>
         </member>
-        <member name="M:XLocalizer.Translate.IStringTranslator.TryTranslate(System.String,System.String,System.String,System.String@)">
+        <member name="M:XLocalizer.Translate.ITranslator.TryTranslate(System.String,System.String,System.String,System.String@)">
             <summary>
             Try translate a text value, 
             </summary>
@@ -34,83 +34,40 @@
             <param name="translation"></param>
             <returns></returns>
         </member>
-        <member name="T:XLocalizer.Translate.IStringTranslatorFactory">
+        <member name="T:XLocalizer.Translate.ITranslatorFactory">
             <summary>
             Interface to provide translation services
             </summary>
         </member>
-        <member name="M:XLocalizer.Translate.IStringTranslatorFactory.Create">
+        <member name="M:XLocalizer.Translate.ITranslatorFactory.Create">
             <summary>
             Create new IStringTranslator based on the default IStringTranslator type defined in startup
             </summary>
             <returns></returns>
         </member>
-        <member name="M:XLocalizer.Translate.IStringTranslatorFactory.Create(System.Type)">
+        <member name="M:XLocalizer.Translate.ITranslatorFactory.Create(System.Type)">
             <summary>
             Create new IStringTranslator based on type
             </summary>
             <param name="type"></param>
             <returns></returns>
         </member>
-        <member name="M:XLocalizer.Translate.IStringTranslatorFactory.Create``1">
+        <member name="M:XLocalizer.Translate.ITranslatorFactory.Create``1">
             <summary>
             Create new IStringTranslator based on TTranslator type
             </summary>
             <returns></returns>
         </member>
-        <member name="M:XLocalizer.Translate.IStringTranslatorFactory.Create(System.String)">
+        <member name="M:XLocalizer.Translate.ITranslatorFactory.Create(System.String)">
             <summary>
             Create new IStringTranslator based on ServiceName property
             </summary>
             <param name="serviceName"></param>
             <returns></returns>
         </member>
-        <member name="M:XLocalizer.Translate.IStringTranslatorFactory.ServiceNames">
+        <member name="M:XLocalizer.Translate.ITranslatorFactory.ServiceNames">
             <summary>
             Get all trasnlation services names
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="T:XLocalizer.Translate.StringTranslatorFactory`1">
-            <summary>
-            Provide translation services
-            </summary>
-        </member>
-        <member name="M:XLocalizer.Translate.StringTranslatorFactory`1.#ctor(System.Collections.Generic.IEnumerable{XLocalizer.Translate.IStringTranslator})">
-            <summary>
-            Create a new instance of TranslationServiceFactory
-            </summary>
-            <param name="translators"></param>
-        </member>
-        <member name="M:XLocalizer.Translate.StringTranslatorFactory`1.Create">
-            <summary>
-            Create new IStringTranslator based on the default IStringTranslator type defined in startup
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:XLocalizer.Translate.StringTranslatorFactory`1.Create(System.Type)">
-            <summary>
-            Create new IStringTranslator based on type
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:XLocalizer.Translate.StringTranslatorFactory`1.Create``1">
-            <summary>
-            Create new IStringTranslator based on the T type
-            </summary>
-            <typeparam name="T"></typeparam>
-            <returns></returns>
-        </member>
-        <member name="M:XLocalizer.Translate.StringTranslatorFactory`1.Create(System.String)">
-            <summary>
-            Create new IStringTranslator based on service name property
-            </summary>
-            <param name="serviceName"></param>
-            <returns></returns>
-        </member>
-        <member name="M:XLocalizer.Translate.StringTranslatorFactory`1.ServiceNames">
-            <summary>
-            Retrive a list of all service names
             </summary>
             <returns></returns>
         </member>
@@ -139,6 +96,49 @@
             <summary>
             Source culture name
             </summary>
+        </member>
+        <member name="T:XLocalizer.Translate.TranslatorFactory`1">
+            <summary>
+            Provide translation services
+            </summary>
+        </member>
+        <member name="M:XLocalizer.Translate.TranslatorFactory`1.#ctor(System.Collections.Generic.IEnumerable{XLocalizer.Translate.ITranslator})">
+            <summary>
+            Create a new instance of TranslationServiceFactory
+            </summary>
+            <param name="translators"></param>
+        </member>
+        <member name="M:XLocalizer.Translate.TranslatorFactory`1.Create">
+            <summary>
+            Create new IStringTranslator based on the default IStringTranslator type defined in startup
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XLocalizer.Translate.TranslatorFactory`1.Create(System.Type)">
+            <summary>
+            Create new IStringTranslator based on type
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XLocalizer.Translate.TranslatorFactory`1.Create``1">
+            <summary>
+            Create new IStringTranslator based on the T type
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:XLocalizer.Translate.TranslatorFactory`1.Create(System.String)">
+            <summary>
+            Create new IStringTranslator based on service name property
+            </summary>
+            <param name="serviceName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XLocalizer.Translate.TranslatorFactory`1.ServiceNames">
+            <summary>
+            Retrive a list of all service names
+            </summary>
+            <returns></returns>
         </member>
     </members>
 </doc>

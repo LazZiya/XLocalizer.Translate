@@ -5,7 +5,7 @@ namespace XLocalizer.Translate
     /// <summary>
     /// Interface to implement a translation service
     /// </summary>
-    public interface IStringTranslator
+    public interface ITranslator
     {
         /// <summary>
         /// Service name is reuired for the dropdown list

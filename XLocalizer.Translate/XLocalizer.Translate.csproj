@@ -7,19 +7,18 @@
 		<Authors>Ziya Mollamahmut</Authors>
 		<Company>Ziyad.info</Company>
 		<Description>
-			An extendable package that provides simple interface for online translation services. Install one or more relevant translation service, or extend it by providing your own translation service package.
+			Translation abstractions extension pack for XLocalizer.
 		</Description>
 		<Copyright>Ziyad.info</Copyright>
-		<PackageProjectUrl>https://github.com/LazZiya/XLocalizer/</PackageProjectUrl>
+		<PackageProjectUrl>https://github.com/LazZiya/XLocalizer.Translate</PackageProjectUrl>
 		<PackageIcon>icon.png</PackageIcon>
 		<PackageTags>asp.net, core, razor, mvc, localization, globalization, translation, services</PackageTags>
 		<PackageReleaseNotes>
-			- Provides interface for LazZiya.TranslatinServices.
-			- Translation services moved to individual nuget packages, so it can be installed on demand
-			- ITranslationServiceFactory for initializing new translation services
-			Release notes: https://github.com/LazZiya/XLocalizer/releases
+			- ITranslator interface to implement translation service.
+			- ITranslatorFactory to create translators based on type
+			Release notes: https://github.com/LazZiya/XLocalizer.Translate/releases
 		</PackageReleaseNotes>
-		<Version>1.0.0-prv3</Version>
+		<Version>1.0.0-prv4</Version>
 		<AssemblyVersion>1.0.0.0</AssemblyVersion>
 		<FileVersion>1.0.0.0</FileVersion>
 		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>

@@ -5,34 +5,34 @@ namespace XLocalizer.Translate
     /// <summary>
     /// Interface to provide translation services
     /// </summary>
-    public interface IStringTranslatorFactory
+    public interface ITranslatorFactory
     {
         /// <summary>
         /// Create new IStringTranslator based on the default IStringTranslator type defined in startup
         /// </summary>
         /// <returns></returns>
-        IStringTranslator Create();
+        ITranslator Create();
 
         /// <summary>
         /// Create new IStringTranslator based on type
         /// </summary>
         /// <param name="type"></param>
         /// <returns></returns>
-        IStringTranslator Create(Type type);
+        ITranslator Create(Type type);
 
         /// <summary>
         /// Create new IStringTranslator based on TTranslator type
         /// </summary>
         /// <returns></returns>
-        IStringTranslator Create<TTranslator>()
-            where TTranslator : IStringTranslator;
+        ITranslator Create<TTranslator>()
+            where TTranslator : ITranslator;
 
         /// <summary>
         /// Create new IStringTranslator based on ServiceName property
         /// </summary>
         /// <param name="serviceName"></param>
         /// <returns></returns>
-        IStringTranslator Create(string serviceName);
+        ITranslator Create(string serviceName);
 
         /// <summary>
         /// Get all trasnlation services names

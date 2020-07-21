@@ -7,16 +7,16 @@ namespace XLocalizer.Translate
     /// <summary>
     /// Provide translation services
     /// </summary>
-    public class StringTranslatorFactory<TTranslator> : IStringTranslatorFactory
-        where TTranslator : IStringTranslator
+    public class TranslatorFactory<TTranslator> : ITranslatorFactory
+        where TTranslator : ITranslator
     {
-        private readonly IEnumerable<IStringTranslator> _translators;
+        private readonly IEnumerable<ITranslator> _translators;
 
         /// <summary>
         /// Create a new instance of TranslationServiceFactory
         /// </summary>
         /// <param name="translators"></param>
-        public StringTranslatorFactory(IEnumerable<IStringTranslator> translators)
+        public TranslatorFactory(IEnumerable<ITranslator> translators)
         {
             _translators = translators;
         }
@@ -25,7 +25,7 @@ namespace XLocalizer.Translate
         /// Create new IStringTranslator based on the default IStringTranslator type defined in startup
         /// </summary>
         /// <returns></returns>
-        public IStringTranslator Create()
+        public ITranslator Create()
         {
             return _translators.FirstOrDefault(x => x.GetType() == typeof(TTranslator));
         }
@@ -34,14 +34,14 @@ namespace XLocalizer.Translate
         /// Create new IStringTranslator based on type
         /// </summary>
         /// <returns></returns>
-        public IStringTranslator Create(Type type)
+        public ITranslator Create(Type type)
         {
             if (type == null)
                 throw new NullReferenceException(nameof(type));
             
             // make sure that we have IStringTranslator
-            if (type.GetInterface(typeof(IStringTranslator).FullName) == null)
-                throw new Exception($"The provided type is of type {type.FullName}, but this service must implement {typeof(IStringTranslator)}");
+            if (type.GetInterface(typeof(ITranslator).FullName) == null)
+                throw new Exception($"The provided type is of type {type.FullName}, but this service must implement {typeof(ITranslator)}");
 
             return _translators.FirstOrDefault(x => x.GetType() == type);
         }
@@ -51,8 +51,8 @@ namespace XLocalizer.Translate
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public IStringTranslator Create<T>()
-            where T : IStringTranslator
+        public ITranslator Create<T>()
+            where T : ITranslator
         {
             return _translators.FirstOrDefault(x => x.GetType() == typeof(TTranslator));
         }
@@ -62,7 +62,7 @@ namespace XLocalizer.Translate
         /// </summary>
         /// <param name="serviceName"></param>
         /// <returns></returns>
-        public IStringTranslator Create(string serviceName)
+        public ITranslator Create(string serviceName)
         {
             return _translators.FirstOrDefault(x => x.ServiceName == serviceName);
         }
