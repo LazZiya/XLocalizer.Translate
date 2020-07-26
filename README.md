@@ -17,19 +17,9 @@ PM > Install-Package XLocalizer.Translate.IBMWatsonTranslate
 ````
 
 ## Usage
-The current package uses [RapidApi](https://rapidapi.com/collection/translation-apis) to access free translation services that dosen't require a credit card for subscription. 
-So before using this package you will need create an application key in RapidApi, see [RapidAPI Quick Start Guide](https://docs.rapidapi.com/docs/basics-creating-a-project), then subscribe to one of more of below translation services.
+Some translation services requires API keys, for all details visit: [DOCS.Ziyad.info](http://docs.ziyad.info/XLocalizer/translate-services.md)
 
-1. [Create RapidAPI key](https://docs.rapidapi.com/v2.0/docs/keys)
- 
-2. Subscribe to translation services, you can go with the free plans :)
-   - [Google Translate](https://rapidapi.com/googlecloud/api/google-translate1/pricing)
-   - [MyMemory](https://rapidapi.com/translated/api/mymemory-translation-memory/pricing)
-   - [SYSTRAN.io](https://rapidapi.com/systran/api/systran-io-translation-and-nlp)
-   - [Yandex Translate](https://tech.yandex.com/translate/)
-   - [IBM Watson Language Translate](https://cloud.ibm.com/catalog/services/language-translator)
-
-3. Goto your project and add the keys to user secrets:
+Goto your project and add the keys to user secrets:
 > Right click on the project name and select Manage User Secrets
 #### Google Translate, MyMemory, SYSTRAN.io via RapidApi Secrets:
 ````json
