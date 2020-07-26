@@ -1,5 +1,5 @@
 # XLocalizer.Translate
-Translation abstractions extension pack for  XLocalizer
+Auto translation support pack for [XLocalizer](https://github.com/LazZiya/XLocalizer)
 
 ## Install
 Install from nuget:
@@ -86,7 +86,7 @@ public class IndexModel : PageModel
 }
 ````
 
-The translation result is an object of type [`TranslationResult`](https://github.com/LazZiya/TranslationServices/blob/master/LazZiya.TranslationServices/TranslationResult.cs).
+The translation result is an object of type [`TranslationResult`](https://github.com/LazZiya/XLocalizer.Translate/blob/master/XLocalizer.Translate/TranslationResult.cs).
 
 Sample result for "Welcome" translation:
 ````
@@ -94,9 +94,4 @@ Sample result for "Welcome" translation:
 ````
 
 ## Extending Translation Services
-If you want to add more services just implement the interface `ITranslationService` and register it as in the builtin servies:
-- [GoogleTranslateService](https://github.com/LazZiya/TranslationServices/blob/master/LazZiya.TranslationServices.GoogleTranslate/GoogleTranslateService.cs)
-- [YandexTranslateService](https://github.com/LazZiya/TranslationServices/blob/master/LazZiya.TranslationServices.YandexTranslate/YandexTranslateService.cs)
-- [MyMemoryTranslateService](https://github.com/LazZiya/TranslationServices/blob/master/LazZiya.TranslationServices.MyMemoryTranslate/MyMemoryTranslateService.cs)
-- [SystranTranslateService](https://github.com/LazZiya/TranslationServices/blob/master/LazZiya.TranslationServices.SystranTranslate/SystranTranslateService.cs)
-- [IBMWatsonTranslateService](https://github.com/LazZiya/TranslationServices/blob/master/LazZiya.TranslationServices.IBMWatsonTranslate/IBMWatsonTranslateService.cs)
+If you want to add more services just implement the interface `ITranslator` and register it in startup.
