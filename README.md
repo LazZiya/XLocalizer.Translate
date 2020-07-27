@@ -51,20 +51,20 @@ Goto your project and add the keys to user secrets:
 
 4. Register one or more services in startup:
 ````cs
-services.AddSingleton<IStringTranslator, IBMWatsonStringTranslator>();
-services.AddHttpClient<IStringTranslator, GoogleTranslateStringTranslator>();
-services.AddHttpClient<IStringTranslator, YandexTranslateStringTranslator>();
-services.AddHttpClient<IStringTranslator, MyMemoryTranslateStringTranslator>();
-services.AddHttpClient<IStringTranslator, SystranTranslateStringTranslator>();
+services.AddSingleton<ITranslator, IBMWatsonStringTranslator>();
+services.AddHttpClient<ITranslator, GoogleTranslateStringTranslator>();
+services.AddHttpClient<ITranslator, YandexTranslateStringTranslator>();
+services.AddHttpClient<ITranslator, MyMemoryTranslateStringTranslator>();
+services.AddHttpClient<ITranslator, SystranTranslateStringTranslator>();
 ````
 
 6. Inject one or all services:
 ````cs
 public class IndexModel : PageModel
 {
-    private readonly IStringTranslator _translator;
+    private readonly ITranslator _translator;
     
-    public IndexModel(IStringTranslator translator)
+    public IndexModel(ITranslator translator)
     {
         _translator = translator;
     }
