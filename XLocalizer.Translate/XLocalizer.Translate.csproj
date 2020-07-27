@@ -42,6 +42,7 @@
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
 		<None Include="files\license.txt" Pack="true" PackagePath="" />
+		<None Include="README.txt" Pack="true" PackagePath="" />
 	</ItemGroup>
 
 	<Target Name="CopyPackage" AfterTargets="Pack">

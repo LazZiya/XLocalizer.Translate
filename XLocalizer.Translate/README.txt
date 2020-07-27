@@ -12,4 +12,4 @@ Instructions to use this package :
 Register the trasnlation service in startup:
  - Services.AddHttpClient<ITranslationService, GoogleTranslationService>();
 
-Repository: https://github.com/LazZiya/Translate
+Repository: https://github.com/LazZiya/XLocalizer.Translate
