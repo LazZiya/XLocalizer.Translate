@@ -13,3 +13,4 @@ Register the trasnlation service in startup:
  - Services.AddHttpClient<ITranslationService, GoogleTranslationService>();
 
 Repository: https://github.com/LazZiya/XLocalizer.Translate
+Docs: https://docs.ziyad.info/en/XLocalizer/v1.0/translate-services.md
