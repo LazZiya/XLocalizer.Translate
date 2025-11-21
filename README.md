@@ -17,7 +17,7 @@ PM > Install-Package XLocalizer.Translate.IBMWatsonTranslate
 ````
 
 ## Usage
-Some translation services requires API keys, for all details visit: [DOCS.Ziyad.info](http://docs.ziyad.info)
+Some translation services requires API keys, for all details visit: [DOCS.Ziya.info.tr](http://docs.ziya.info.tr)
 
 Goto your project and add the keys to user secrets:
 > Right click on the project name and select Manage User Secrets
